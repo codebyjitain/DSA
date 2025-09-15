@@ -38,27 +38,22 @@ void inorder(Node* tree){
 }
 
 void postorder(Node* tree){
-    stack<Node*> st;
-    Node* x = tree;
+    stack<Node*> st1;
+    stack<Node*> st2;
+    st1.push(tree);
+    while(!st1.empty()){
+        Node* x = st1.top();
+        st1.pop();
+        st2.push(x);
 
-    while (true){
-        if(x != NULL){
-            st.push(x);
-            x = x->left;
-        }   
-        else{
-            if(st.empty() == true) break;
-            x = st.top();
-            st.pop();
-            if(x->left == NULL){
-                cout<<x->data<<" ";
-                x = x->left;
-            }
-            else{
-                st.push(x);
-                x = x->right;
-            }
-        }     
+        Node* temp = st2.top();
+        if(temp->left) st1.push(temp->left);
+        if(temp->right) st1.push(temp->right);
+    }
+
+    while(!st2.empty()){
+        cout<<st2.top()->data<<" ";
+        st2.pop();
     }
 }
 
