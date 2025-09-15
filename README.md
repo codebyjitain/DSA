@@ -11,8 +11,9 @@
     - Basics
 
 ## Array : 35 Files
-    - 2 SUM
+    - 2SUM
     - 3SUM
+    - 4SUM
     - CHECK IF ARRAY IS SORTED
     - FIND DUPLICATES
     - FIND UNIQUE
