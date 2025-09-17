@@ -57,12 +57,40 @@ void postorder(Node* tree){
     }
 }
 
+void postorder_using_single_stack(Node* tree){
+    stack<Node*> st;
+    Node* curr = tree;
+    while(curr!= NULL || !st.empty()){
+        if(curr != NULL){
+            st.push(curr);
+            curr = curr->left;
+        }
+        else{
+            Node* temp = st.top()->right;
+            if(temp == NULL){
+                temp = st.top();
+                st.pop();
+                cout<<temp->data<<" ";
+                // while(!st.empty() && temp == st.top()->right){
+                //     temp = st.top();
+                //     st.pop();
+                //     cout<<temp->data<<" ";
+                // }
+            }
+            else{
+                curr = temp;
+            }
+        }
+    }
+}
+
 int main(){
     Node* tree = new Node(10);
     generateTree(tree);
     // preorder(tree);
     // inorder(tree);
-    postorder(tree);
+    // postorder(tree);
+    postorder_using_single_stack(tree);
 
     return 0;
 }
