@@ -23,3 +23,8 @@ void generateTree(struct Node* &tree){
     tree->right->right = new Node(70);
 }
 
+void print(vector<int> arr){
+    for(int i = 0;i<arr.size();i++){
+        cout<<arr[i]<<" ";
+    }
+}
