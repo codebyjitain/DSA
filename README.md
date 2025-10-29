@@ -1,4 +1,4 @@
-# DSA Questions Collection
+# DSA Questions Collection - OK
 
 ## Array (39 Files)
 - 2 SUM
