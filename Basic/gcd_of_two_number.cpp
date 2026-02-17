@@ -16,3 +16,10 @@ int gcd(int a, int b) {
 int lcm(int a,int b){
     return (a / gcd(a,b))*b;
 }
+
+int main(){
+    int a = 10;
+    int b = 20;
+    cout<<gcd(a,b)<<endl;
+    return 0;
+}
