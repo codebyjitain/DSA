@@ -84,11 +84,35 @@ vector<vector<int>> levelOrder(Node *root)
 
 // using NUll approach Solved on GFG
 
+// store in array using level order 
+vector<int> level_order(struct Node* root){
+    queue<Node*> q;
+    q.push(root);
+    vector<int> ans;
+    while (!q.empty())
+    {
+        Node* temp = q.front();
+        q.pop();
+        ans.push_back(temp->data);
+
+        if(temp->left){
+            q.push(temp->left);
+        }
+        if(temp->right){
+            q.push(temp->right);
+        }
+    }
+    return ans;
+    
+}
+
 int main()
 {
     struct Node *tree = new Node(10);
     generateTree(tree);
 
-    level(tree);
+    // level(tree);
+    vector<int> ans = level_order(tree);
+    print(ans);
     return 0;
 }
